@@ -3,7 +3,7 @@ pipeline {
         stages {
             stage("k8s") {
                 steps{
-                    with KubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'cluster', contextName: '', credentialsId: 'kube', namespace: 'Default', serverUrl: 'https://99FAD5F69307EB20A6C6B0AB59C6D8CA.sk1.eu-west-2.eks.amazonaws.com']])
+                    withKubeCredentials (kubectlCredentials: [[caCertificate: '', clusterName: 'cluster', contextName: '', credentialsId: 'kube', namespace: 'Default', serverUrl: 'https://99FAD5F69307EB20A6C6B0AB59C6D8CA.sk1.eu-west-2.eks.amazonaws.com']])
                 }
             }
             stage("install") {
